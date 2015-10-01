@@ -27,11 +27,6 @@
         <tm_countdowntimer>
             <general>
                 <add_jquery>0</add_jquery>
-                <display_days>0</display_days>
-                <timer_type>simpletimer</timer_type>
-                <fliptimer_size>tmflipmedium</fliptimer_size>
-                <fliptimer_skin>tmflipdark</fliptimer_skin>
-                <simpletimer_css>font-weight: bold;</simpletimer_css>
             </general>
         </tm_countdowntimer>
     </default>
@@ -44,15 +39,7 @@
         <models>
             <tm_countdowntimer>
                 <class>TM_CountdownTimer_Model</class>
-                <resourceModel>tm_countdowntimer_resource</resourceModel>
             </tm_countdowntimer>
-            <tm_countdowntimer_resource>
-                <entities>
-                    <test_table>
-                        <table>tm_countdowntimer_test</table>
-                    </test_table>
-                </entities>
-            </tm_countdowntimer_resource>
         </models>
         <helpers>
             <tm_countdowntimer>
