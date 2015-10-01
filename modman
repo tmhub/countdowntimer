@@ -1,0 +1,8 @@
+# Countdown Timer symlinks
+app\code\local\TM\CountdownTimer\                               app\code\local\TM\CountdownTimer\
+app\etc\modules\TM_CountdownTimer.xml                           app\etc\modules\TM_CountdownTimer.xml
+app\design\frontend\base\default\template\tm\countdowntimer\    app\design\frontend\base\default\template\tm\countdowntimer\
+app\design\frontend\base\default\layout\tm\countdowntimer.xml   app\design\frontend\base\default\layout\tm\countdowntimer.xml
+js\tm\flipclock\                                                js\tm\flipclock\
+js\tm\jquery\                                                   js\tm\jquery\
+js\tm\simpletimer\                                              js\tm\simpletimer\

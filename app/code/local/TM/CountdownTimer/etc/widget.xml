@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<widgets>
+    <tm_countdowntimer_flip module="tm_countdowntimer" translate="name description" type="tm_countdowntimer/timer_flip">
+        <name>Countdown Timer - Flip timer</name>
+        <description>Add to content flip timer</description>
+        <parameters>
+            <date translate="label">
+                <label>End date and time</label>
+                <description>Input format YYYY-MM-DD HH24:MI:SS</description>
+                <type>text</type>
+                <visible>1</visible>
+                <required>1</required>
+            </date>
+            <display_days translate="label">
+                <label>Display days number</label>
+                <description>"No" - hours can be greater than 24</description>
+                <type>select</type>
+                <source_model>adminhtml/system_config_source_yesno</source_model>
+                <visible>1</visible>
+            </display_days>
+            <!-- flip timer sittings -->
+            <size translate="label">
+                <label>Flip timer size</label>
+                <type>select</type>
+                <source_model>tm_countdowntimer/sources_fliptimersize</source_model>
+                <visible>1</visible>
+            </size>
+            <skin  translate="label">
+                <label>Flip timer skin</label>
+                <type>select</type>
+                <source_model>tm_countdowntimer/sources_fliptimerskin</source_model>
+                <visible>1</visible>
+            </skin>
+            <hide_labels translate="label">
+                <label>Hide labels (hours, minutes, etc.)</label>
+                <type>select</type>
+                <source_model>adminhtml/system_config_source_yesno</source_model>
+                <visible>1</visible>
+            </hide_labels>
+        </parameters>
+    </tm_countdowntimer_flip>
+    <tm_countdowntimer_simple module="tm_countdowntimer" translate="name description" type="tm_countdowntimer/timer_simple">
+        <name>Countdown Timer - Simple timer</name>
+        <description>Add to content simple timer</description>
+        <parameters>
+            <date translate="label">
+                <label>End date and time</label>
+                <description>Input format YYYY-MM-DD HH24:MI:SS</description>
+                <type>text</type>
+                <visible>1</visible>
+                <required>1</required>
+            </date>
+            <display_days translate="label">
+                <label>Display days number</label>
+                <description>"No" - hours can be greater than 24</description>
+                <type>select</type>
+                <source_model>adminhtml/system_config_source_yesno</source_model>
+                <visible>1</visible>
+            </display_days>
+            <!-- simple timer -->
+            <inlinecss translate="label">
+                <label>Simple timer CSS</label>
+                <description>Default inline CSS for timer. Can be blank. Example: font-weight:bold; color:#6600CC;</description>
+                <type>text</type>
+                <visible>1</visible>
+            </inlinecss>
+        </parameters>
+    </tm_countdowntimer_simple>
+</widgets>

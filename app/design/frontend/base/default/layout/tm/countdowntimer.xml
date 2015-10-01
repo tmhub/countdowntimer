@@ -1,0 +1,59 @@
+<?xml version="1.0" ?>
+<layout>
+    <default>
+        <reference name="head">
+            <!-- Remove rwd theme jQuery if selected Enable jQ for CountDown Timer -->
+            <action method="removeItem" ifconfig="tm_countdowntimer/general/add_jquery">
+                <type>skin_js</type>
+                <name>js/lib/jquery-1.10.2.min.js</name>
+            </action>
+            <action method="removeItem" ifconfig="tm_countdowntimer/general/add_jquery">
+                <type>js</type>
+                <name>lib/jquery/jquery-1.10.2.min.js</name>
+            </action>
+            <action method="removeItem" ifconfig="tm_countdowntimer/general/add_jquery">
+                <type>js</type>
+                <name>lib/jquery/noconflict.js</name>
+            </action>
+            <!-- Add jQuery 1.11.1 if selected Enable jQ for CountDown Timer-->
+            <action method="addItem" ifconfig="tm_countdowntimer/general/add_jquery">
+                <type>js</type>
+                <name>tm/jquery/jquery-1.11.1.min.js</name>
+            </action>
+            <!-- Load FlipClock js-lib-->
+            <action method="addItem">
+                <type>js</type>
+                <name>tm/flipclock/flipclock.js</name>
+            </action>
+            <!-- Load FlipClock CSS styles-->
+            <action method="addItem" >
+                <type>js_css</type>
+                <name>tm/flipclock/flipclock.css</name>
+            </action>
+            <!-- Load TM FlipClock types-->
+            <action method="addItem">
+                <type>js_css</type>
+                <name>tm/flipclock/flipclock_styles.css</name>
+            </action>
+            <!-- Load SimpleTimer js-lib-->
+            <action method="addItem">
+                <type>js</type>
+                <name>tm/simpletimer/simpletimer.js</name>
+            </action>
+            <!-- Load SimpleTimer CSS styles-->
+            <action method="addItem" >
+                <type>js_css</type>
+                <name>tm/simpletimer/simpletimer.css</name>
+            </action>
+        </reference>
+        <reference name="content">
+            <!-- <block type="core/template" template="tm/countdowntimer/index.phtml" /> -->
+            <!-- <block type="countdowntimer/timer">
+                <action method="importSettings"><path>tm_countdowntimer/general</path></action>
+            </block> -->
+        </reference>
+        <reference name="before_body_end">
+            <block type="core/template" name="tm_cdt_start" template="tm/countdowntimer/startscript.phtml" />
+        </reference>
+    </default>
+</layout>

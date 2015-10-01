@@ -1,0 +1,16 @@
+<script type="text/javascript">
+    // strt flip timer
+    jQuery('.<?php echo TM_CountdownTimer_Block_Timer_Flip::getTimerBaseClass() ?>').each(
+        function (index, value) {
+            jQuery(this).FlipClock(
+                jQuery(this).attr('data-seconds-left'),
+                {
+                    clockFace: jQuery(this).attr('data-flipface'),
+                    countdown: true
+                }
+            )
+        }
+    );
+    // start simple timer
+    jQuery('.<?php echo TM_CountdownTimer_Block_Timer_Simple::getTimerBaseClass() ?>').startTimer();
+</script>
