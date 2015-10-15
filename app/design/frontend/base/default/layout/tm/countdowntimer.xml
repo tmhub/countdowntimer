@@ -46,12 +46,6 @@
                 <name>tm/simpletimer/simpletimer.css</name>
             </action>
         </reference>
-        <reference name="content">
-            <!-- <block type="core/template" template="tm/countdowntimer/index.phtml" /> -->
-            <!-- <block type="countdowntimer/timer">
-                <action method="importSettings"><path>tm_countdowntimer/general</path></action>
-            </block> -->
-        </reference>
         <reference name="before_body_end">
             <block type="core/template" name="tm_cdt_start" template="tm/countdowntimer/startscript.phtml" />
         </reference>

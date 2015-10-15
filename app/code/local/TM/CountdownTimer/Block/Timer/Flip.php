@@ -8,7 +8,6 @@ class TM_CountdownTimer_Block_Timer_Flip
     const TIMER_BASE_CLASS_FLIP = 'tm-cdt-flip';
 
     protected function _construct() {
-        // die('You in fliptimer... ');
         if (!$this->hasData('template')) {
             $this->setData('template', self::TIMER_FLIP_TEMPLATE);
         }

@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <widgets>
+    <!-- Widget description for Flip Timer Widget -->
     <tm_countdowntimer_flip module="tm_countdowntimer" translate="name description" type="tm_countdowntimer/timer_flip">
         <name>Countdown Timer - Flip timer</name>
         <description>Add to content flip timer</description>
@@ -18,7 +19,6 @@
                 <source_model>adminhtml/system_config_source_yesno</source_model>
                 <visible>1</visible>
             </display_days>
-            <!-- flip timer sittings -->
             <size translate="label">
                 <label>Flip timer size</label>
                 <type>select</type>
@@ -39,6 +39,7 @@
             </hide_labels>
         </parameters>
     </tm_countdowntimer_flip>
+    <!-- Widget description for Simple Timer Widget -->
     <tm_countdowntimer_simple module="tm_countdowntimer" translate="name description" type="tm_countdowntimer/timer_simple">
         <name>Countdown Timer - Simple timer</name>
         <description>Add to content simple timer</description>
@@ -57,10 +58,9 @@
                 <source_model>adminhtml/system_config_source_yesno</source_model>
                 <visible>1</visible>
             </display_days>
-            <!-- simple timer -->
             <inlinecss translate="label">
                 <label>Simple timer CSS</label>
-                <description>Default inline CSS for timer. Can be blank. Example: font-weight:bold; color:#6600CC;</description>
+                <description>Default inline CSS for timer. Example: font-weight:bold; color:#6600CC;</description>
                 <type>text</type>
                 <visible>1</visible>
             </inlinecss>

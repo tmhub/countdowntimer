@@ -1,5 +1,8 @@
 <?php
-
+/*
+* Prepare list of skins for Flip Timer.
+* 'value' => css class
+*/
 class TM_CountdownTimer_Model_Sources_FlipTimerSkin
 {
     public function toOptionArray()
