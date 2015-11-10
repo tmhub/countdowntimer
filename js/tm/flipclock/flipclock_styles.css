@@ -1,3 +1,11 @@
+.flip-clock-wrapper ul {
+  float: none;
+  display: inline-block;
+}
+.flip-clock-wrapper span {
+  float: none;
+  display: inline-block;
+}
 /* reset STD styles */
 .std .flip-clock-wrapper ul {
   background: none;
@@ -47,8 +55,8 @@
   width: 0;
 }
 .flip-small .flip-clock-divider .flip-clock-label {
-  right: -34px;
-  top: -11px;
+  right: -32px;
+  top: -16px;
 }
 .flip-small .flip-clock-divider.minutes .flip-clock-label {
   right: -40px;
@@ -77,7 +85,7 @@
 /* medium flipclock style */
 .flip-medium ul {
   border-radius: 4px;
-  font-weight: normal;
+  font-weight: normal !important;
   height: 56px;
   margin: 2px !important;
   width: 38px;
@@ -112,7 +120,7 @@
 }
 .flip-medium .flip-clock-divider .flip-clock-label {
   right: -60px;
-  top: -14px;
+  top: -18px;
 }
 .flip-medium .flip-clock-divider.minutes .flip-clock-label {
   right: -64px;

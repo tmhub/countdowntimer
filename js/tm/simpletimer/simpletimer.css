@@ -1,14 +1,14 @@
 .simpletimer .days {
-  float: left;
+  display: inline-block;
 }
 .simpletimer .hours {
-  float: left;
+  display: inline-block;
 }
 .simpletimer .minutes {
-  float: left;
+  display: inline-block;
 }
 .simpletimer .seconds {
-  float: left;
+  display: inline-block;
 }
 .simpletimer .clearDiv {
   clear: both;
