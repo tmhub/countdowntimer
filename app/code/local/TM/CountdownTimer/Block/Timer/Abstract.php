@@ -32,8 +32,9 @@ class TM_CountdownTimer_Block_Timer_Abstract extends Mage_Core_Block_Template
     public function getDaysLeft()
     {
         $result = 0;
-        $secondsLeft = $this->getSecondsLeft();
-        $result = floor( $secondsLeft  / (24*60*60) );
+        // implement in follow releases
+        // $secondsLeft = $this->getSecondsLeft();
+        // $result = floor( $secondsLeft  / (24*60*60) );
         return $result;
     }
 
