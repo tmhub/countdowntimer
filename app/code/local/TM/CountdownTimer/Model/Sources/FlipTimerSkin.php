@@ -3,7 +3,7 @@
 * Prepare list of skins for Flip Timer.
 * 'value' => css class
 */
-class TM_CountdownTimer_Model_Sources_FlipTimerSkin
+class TM_CountdownTimer_Model_Sources_Fliptimerskin
 {
     public function toOptionArray()
     {
