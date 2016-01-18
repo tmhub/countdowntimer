@@ -8,6 +8,6 @@
 ?>
 <div class="<?php echo $this->getClassname()?>" style="<?php echo $this->getInlinestyle()?>" data-seconds-left=<?php echo $_secondsLeft?>>
 <?php if ($_daysLeft > 0 ): ?>
-    <span class="days"><?php echo $_daysLeft." day(s)"; ?></span>
+    <span class="days"><?php echo $_daysLeft." ".Mage::helper('tm_countdowntimer')->__('day(s)'); ?></span>
 <?php endif ?>
 </div>

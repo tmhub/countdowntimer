@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jstranslator>
+    <tm_countdowntimer-years translate="message" module="tm_countdowntimer">
+        <message>Years</message>
+    </tm_countdowntimer-years>
+    <tm_countdowntimer-months translate="message" module="tm_countdowntimer">
+        <message>Months</message>
+    </tm_countdowntimer-months>
+    <tm_countdowntimer-days translate="message" module="tm_countdowntimer">
+        <message>Days</message>
+    </tm_countdowntimer-days>
+    <tm_countdowntimer-hours translate="message" module="tm_countdowntimer">
+        <message>Hours</message>
+    </tm_countdowntimer-hours>
+    <tm_countdowntimer-minutes translate="message" module="tm_countdowntimer">
+        <message>Minutes</message>
+    </tm_countdowntimer-minutes>
+    <tm_countdowntimer-seconds translate="message" module="tm_countdowntimer">
+        <message>Seconds</message>
+    </tm_countdowntimer-seconds>
+</jstranslator>

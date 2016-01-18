@@ -1,4 +1,13 @@
 <script type="text/javascript">
+    // translations for flipclock labels
+    FlipClock.Lang['<?php echo Mage::app()->getLocale()->getLocaleCode();?>'] = {
+      'years' : Translator.translate('Years'),
+      'months' : Translator.translate('Months'),
+      'days' : Translator.translate('Days'),
+      'hours' : Translator.translate('Hours'),
+      'minutes' : Translator.translate('Minutes'),
+      'seconds' : Translator.translate('Seconds')
+    };
     // start flip timer
     jQuery('.<?php echo TM_CountdownTimer_Block_Timer_Flip::getTimerBaseClass() ?>').each(
         function (index, value) {
@@ -6,7 +15,8 @@
                 jQuery(this).attr('data-seconds-left'),
                 {
                     clockFace: jQuery(this).attr('data-flipface'),
-                    countdown: true
+                    countdown: true,
+                    language: '<?php echo Mage::app()->getLocale()->getLocaleCode();?>'
                 }
             )
         }

@@ -1,10 +1,12 @@
 <?xml version="1.0" ?>
 <config>
+
     <modules>
         <TM_CountdownTimer>
-            <version>1.0.0</version>
+            <version>1.0.1</version>
         </TM_CountdownTimer>
     </modules>
+
     <frontend>
         <routers>
             <tm_countdowntimer>
@@ -22,6 +24,15 @@
                 </tm_countdowntimer>
             </updates>
         </layout>
+        <translate>
+            <modules>
+                <tm_countdowntimer>
+                    <files>
+                        <default>TM_CountdownTimer.csv</default>
+                    </files>
+                </tm_countdowntimer>
+            </modules>
+        </translate>
     </frontend>
     <default>
         <tm_countdowntimer>
