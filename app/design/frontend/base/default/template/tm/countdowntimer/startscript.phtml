@@ -8,8 +8,21 @@
       'minutes' : Translator.translate('Minutes'),
       'seconds' : Translator.translate('Seconds')
     };
+    var timerSimpleClass = '<?php echo TM_CountdownTimer_Block_Timer_Simple::getTimerBaseClass() ?>';
+    var timerFlipClass = '<?php echo TM_CountdownTimer_Block_Timer_Flip::getTimerBaseClass() ?>';
+    // calculate seconds left
+    jQuery('.' + timerFlipClass + ',.' + timerSimpleClass).each(
+      function (index, htmlObj) {
+        if (htmlObj.hasAttribute('data-end-datetime-utc')) {
+          var secLeft = parseInt(htmlObj.getAttribute('data-end-datetime-utc'));
+          secLeft -= Math.floor(Date.now() / 1000);
+          if (secLeft < 0) {secLeft = 0};
+          htmlObj.setAttribute('data-seconds-left', secLeft);
+        };
+      }
+    );
     // start flip timer
-    jQuery('.<?php echo TM_CountdownTimer_Block_Timer_Flip::getTimerBaseClass() ?>').each(
+    jQuery('.' + timerFlipClass).each(
         function (index, value) {
             jQuery(this).FlipClock(
                 jQuery(this).attr('data-seconds-left'),
@@ -21,6 +34,22 @@
             )
         }
     );
+    // set days for simple timer
+    jQuery('.' + timerSimpleClass).each(
+      function (index, htmlObj) {
+        if (!htmlObj.hasAttribute('data-display-days')) { return; };
+        for (var i = 0; i < htmlObj.childNodes.length; i++) {
+            if (htmlObj.childNodes[i].className == "days") {
+              numberOfDays = Math.floor( parseInt(htmlObj.getAttribute('data-seconds-left')) / ( 24 * 60 * 60 ) );
+              if (numberOfDays > 0) {
+                htmlObj.childNodes[i].innerHTML = numberOfDays.toString() + ' ' + Translator.translate('day(s)');
+                secLeft = htmlObj.getAttribute('data-seconds-left') - numberOfDays * 24 * 60 * 60;
+                htmlObj.setAttribute('data-seconds-left', secLeft);
+              };
+            }
+        }
+      }
+    );
     // start simple timer
-    jQuery('.<?php echo TM_CountdownTimer_Block_Timer_Simple::getTimerBaseClass() ?>').startTimer();
+    jQuery('.' + timerSimpleClass).startTimer();
 </script>

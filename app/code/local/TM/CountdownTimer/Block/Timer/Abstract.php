@@ -29,6 +29,18 @@ class TM_CountdownTimer_Block_Timer_Abstract extends Mage_Core_Block_Template
         return $secondsLeft;
     }
 
+    /*
+     *  Date from widget (considering that user input store locale datetime)
+     *  return @timestamp - integer/timestamp
+     */
+    public function getDateInTimestamp(){
+        $defaultTimeZone = date_default_timezone_get();
+        date_default_timezone_set(Mage::getStoreConfig('general/locale/timezone'));
+        $timestamp = strtotime($this->_getData('date'));
+        date_default_timezone_set($defaultTimeZone);
+        return $timestamp;
+    }
+
     public function getDaysLeft()
     {
         $result = 0;
