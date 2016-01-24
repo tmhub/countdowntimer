@@ -18,4 +18,7 @@
     <tm_countdowntimer-seconds translate="message" module="tm_countdowntimer">
         <message>Seconds</message>
     </tm_countdowntimer-seconds>
+    <tm_countdowntimer-simple-days translate="message" module="tm_countdowntimer">
+        <message>day(s)</message>
+    </tm_countdowntimer-simple-days>
 </jstranslator>
