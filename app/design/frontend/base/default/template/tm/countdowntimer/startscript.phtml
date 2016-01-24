@@ -1,55 +1,55 @@
 <script type="text/javascript">
-    // translations for flipclock labels
-    FlipClock.Lang['<?php echo Mage::app()->getLocale()->getLocaleCode();?>'] = {
-      'years' : Translator.translate('Years'),
-      'months' : Translator.translate('Months'),
-      'days' : Translator.translate('Days'),
-      'hours' : Translator.translate('Hours'),
-      'minutes' : Translator.translate('Minutes'),
-      'seconds' : Translator.translate('Seconds')
+  function TimerCalulateSecondsLeft(index, htmlObj) {
+    if (htmlObj.hasAttribute('data-end-datetime-utc')) {
+      var secondsLeft = parseInt(htmlObj.getAttribute('data-end-datetime-utc'));
+      secondsLeft -= Math.floor(Date.now() / 1000);
+      if (secondsLeft < 0) {secondsLeft = 0};
+      htmlObj.setAttribute('data-seconds-left', secondsLeft);
     };
-    var timerSimpleClass = '<?php echo TM_CountdownTimer_Block_Timer_Simple::getTimerBaseClass() ?>';
-    var timerFlipClass = '<?php echo TM_CountdownTimer_Block_Timer_Flip::getTimerBaseClass() ?>';
-    // calculate seconds left
-    jQuery('.' + timerFlipClass + ',.' + timerSimpleClass).each(
-      function (index, htmlObj) {
-        if (htmlObj.hasAttribute('data-end-datetime-utc')) {
-          var secLeft = parseInt(htmlObj.getAttribute('data-end-datetime-utc'));
-          secLeft -= Math.floor(Date.now() / 1000);
-          if (secLeft < 0) {secLeft = 0};
+  }
+  function TimerSimpleCalculateDays(index, htmlObj) {
+    if (!htmlObj.hasAttribute('data-display-days')) { return; };
+    for (var i = 0; i < htmlObj.childNodes.length; i++) {
+      if (htmlObj.childNodes[i].className == 'days') {
+        numberOfDays = Math.floor( parseInt(htmlObj.getAttribute('data-seconds-left')) / ( 24 * 60 * 60 ) );
+        if (numberOfDays > 0) {
+          htmlObj.childNodes[i].innerHTML = numberOfDays.toString() + ' ' + Translator.translate('day(s)');
+          secLeft = htmlObj.getAttribute('data-seconds-left') - numberOfDays * 24 * 60 * 60;
           htmlObj.setAttribute('data-seconds-left', secLeft);
+        } else {
+          htmlObj.childNodes[i].innerHTML = '';
         };
       }
-    );
-    // start flip timer
-    jQuery('.' + timerFlipClass).each(
-        function (index, value) {
-            jQuery(this).FlipClock(
-                jQuery(this).attr('data-seconds-left'),
-                {
-                    clockFace: jQuery(this).attr('data-flipface'),
-                    countdown: true,
-                    language: '<?php echo Mage::app()->getLocale()->getLocaleCode();?>'
-                }
-            )
+    }
+  }
+  var timerSimpleClass = '.<?php echo TM_CountdownTimer_Block_Timer_Simple::getTimerBaseClass() ?>';
+  var timerFlipClass = '.<?php echo TM_CountdownTimer_Block_Timer_Flip::getTimerBaseClass() ?>';
+  var localeName = '<?php echo Mage::app()->getLocale()->getLocaleCode();?>';
+  // calculate seconds left
+  jQuery(timerFlipClass + ',' + timerSimpleClass).each(TimerCalulateSecondsLeft);
+  // set days for simple timer
+  jQuery(timerSimpleClass).each(TimerSimpleCalculateDays);
+  // translations for flipclock labels
+  FlipClock.Lang[localeName] = {
+    'years' : Translator.translate('Years'),
+    'months' : Translator.translate('Months'),
+    'days' : Translator.translate('Days'),
+    'hours' : Translator.translate('Hours'),
+    'minutes' : Translator.translate('Minutes'),
+    'seconds' : Translator.translate('Seconds')
+  };
+  // start flip timer
+  jQuery(timerFlipClass).each(
+    function (index, htmlObj) {
+      jQuery(this).FlipClock(
+        htmlObj.getAttribute('data-seconds-left'),
+        { clockFace: htmlObj.getAttribute('data-flipface'),
+          countdown: true,
+          language: localeName
         }
-    );
-    // set days for simple timer
-    jQuery('.' + timerSimpleClass).each(
-      function (index, htmlObj) {
-        if (!htmlObj.hasAttribute('data-display-days')) { return; };
-        for (var i = 0; i < htmlObj.childNodes.length; i++) {
-            if (htmlObj.childNodes[i].className == "days") {
-              numberOfDays = Math.floor( parseInt(htmlObj.getAttribute('data-seconds-left')) / ( 24 * 60 * 60 ) );
-              if (numberOfDays > 0) {
-                htmlObj.childNodes[i].innerHTML = numberOfDays.toString() + ' ' + Translator.translate('day(s)');
-                secLeft = htmlObj.getAttribute('data-seconds-left') - numberOfDays * 24 * 60 * 60;
-                htmlObj.setAttribute('data-seconds-left', secLeft);
-              };
-            }
-        }
-      }
-    );
-    // start simple timer
-    jQuery('.' + timerSimpleClass).startTimer();
+      )
+    }
+  );
+  // start simple timer
+  jQuery(timerSimpleClass).startTimer();
 </script>
