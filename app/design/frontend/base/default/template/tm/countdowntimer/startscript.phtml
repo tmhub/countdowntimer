@@ -1,5 +1,5 @@
 <script type="text/javascript">
-  function TimerCalulateSecondsLeft(index, htmlObj) {
+  function setAttributeSecondsLeft(htmlObj) {
     if (htmlObj.hasAttribute('data-end-datetime-utc')) {
       var secondsLeft = parseInt(htmlObj.getAttribute('data-end-datetime-utc'));
       secondsLeft -= Math.floor(Date.now() / 1000);
@@ -7,28 +7,21 @@
       htmlObj.setAttribute('data-seconds-left', secondsLeft);
     };
   }
-  function TimerSimpleCalculateDays(index, htmlObj) {
+  function setDaysForSimpleTimer(htmlObj) {
     if (!htmlObj.hasAttribute('data-display-days')) { return; };
-    for (var i = 0; i < htmlObj.childNodes.length; i++) {
-      if (htmlObj.childNodes[i].className == 'days') {
-        numberOfDays = Math.floor( parseInt(htmlObj.getAttribute('data-seconds-left')) / ( 24 * 60 * 60 ) );
-        if (numberOfDays > 0) {
-          htmlObj.childNodes[i].innerHTML = numberOfDays.toString() + ' ' + Translator.translate('day(s)');
-          secLeft = htmlObj.getAttribute('data-seconds-left') - numberOfDays * 24 * 60 * 60;
-          htmlObj.setAttribute('data-seconds-left', secLeft);
-        } else {
-          htmlObj.childNodes[i].innerHTML = '';
-        };
-      }
-    }
+    var secondsLeft = parseInt(htmlObj.getAttribute('data-seconds-left'));
+    var numberOfDays = Math.floor( secondsLeft / ( 24 * 60 * 60 ) );
+    if (numberOfDays > 0) {
+      jQuery(htmlObj).find('.days').text(numberOfDays.toString() + ' ' + Translator.translate('day(s)'));
+      secondsLeft -= numberOfDays * 24 * 60 * 60;
+      htmlObj.setAttribute('data-seconds-left', secondsLeft);
+    } else {
+      jQuery(htmlObj).find('.days').text('');
+    };
   }
   var timerSimpleClass = '.<?php echo TM_CountdownTimer_Block_Timer_Simple::getTimerBaseClass() ?>';
   var timerFlipClass = '.<?php echo TM_CountdownTimer_Block_Timer_Flip::getTimerBaseClass() ?>';
   var localeName = '<?php echo Mage::app()->getLocale()->getLocaleCode();?>';
-  // calculate seconds left
-  jQuery(timerFlipClass + ',' + timerSimpleClass).each(TimerCalulateSecondsLeft);
-  // set days for simple timer
-  jQuery(timerSimpleClass).each(TimerSimpleCalculateDays);
   // translations for flipclock labels
   FlipClock.Lang[localeName] = {
     'years' : Translator.translate('Years'),
@@ -41,9 +34,11 @@
   // start flip timer
   jQuery(timerFlipClass).each(
     function (index, htmlObj) {
+      setAttributeSecondsLeft(htmlObj);
       jQuery(this).FlipClock(
         htmlObj.getAttribute('data-seconds-left'),
-        { clockFace: htmlObj.getAttribute('data-flipface'),
+        {
+          clockFace: htmlObj.getAttribute('data-flipface'),
           countdown: true,
           language: localeName
         }
@@ -51,5 +46,10 @@
     }
   );
   // start simple timer
-  jQuery(timerSimpleClass).startTimer();
+  jQuery(timerSimpleClass).each(
+    function (index, htmlObj) {
+      setAttributeSecondsLeft(htmlObj);
+      setDaysForSimpleTimer(htmlObj);
+    }
+    ).startTimer();
 </script>
