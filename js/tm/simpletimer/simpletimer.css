@@ -4,6 +4,9 @@
 .simpletimer .days {
   display: inline-block;
 }
+.simpletimer .days:after {
+  content: "\00a0";
+}
 .simpletimer .hours {
   display: inline-block;
 }
