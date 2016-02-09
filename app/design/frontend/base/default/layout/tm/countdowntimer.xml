@@ -30,24 +30,20 @@
                 <type>js_css</type>
                 <name>tm/flipclock/flipclock.css</name>
             </action>
-            <!-- Load TM FlipClock types-->
-            <action method="addItem">
-                <type>js_css</type>
-                <name>tm/flipclock/flipclock_styles.css</name>
-            </action>
             <!-- Load SimpleTimer js-lib-->
             <action method="addItem">
                 <type>js</type>
                 <name>tm/simpletimer/simpletimer.js</name>
             </action>
-            <!-- Load SimpleTimer CSS styles-->
-            <action method="addItem" >
-                <type>js_css</type>
-                <name>tm/simpletimer/simpletimer.css</name>
+            <!-- Extesion styles and scripts -->
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/tm/countdowntimer/starttimers.js</name>
             </action>
-        </reference>
-        <reference name="before_body_end">
-            <block type="core/template" name="tm_cdt_start" template="tm/countdowntimer/startscript.phtml" />
+            <action method="addItem">
+                <type>skin_css</type>
+                <name>css/tm/countdowntimer.css</name>
+            </action>
         </reference>
     </default>
 </layout>

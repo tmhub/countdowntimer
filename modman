@@ -15,3 +15,5 @@ app/locale/ro_RO/TM_CountdownTimer.csv                          app/locale/ro_RO
 js/tm/flipclock/                                                js/tm/flipclock/
 js/tm/jquery/                                                   js/tm/jquery/
 js/tm/simpletimer/                                              js/tm/simpletimer/
+skin/frontend/base/default/css/tm/countdowntimer.css			skin/frontend/base/default/css/tm/countdowntimer.css
+skin/frontend/base/default/js/tm/countdowntimer/				skin/frontend/base/default/js/tm/countdowntimer/
