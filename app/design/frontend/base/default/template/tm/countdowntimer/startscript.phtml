@@ -19,8 +19,8 @@
       jQuery(htmlObj).find('.days').text('');
     };
   }
-  var timerSimpleClass = '.<?php echo TM_CountdownTimer_Block_Timer_Simple::getTimerBaseClass() ?>';
-  var timerFlipClass = '.<?php echo TM_CountdownTimer_Block_Timer_Flip::getTimerBaseClass() ?>';
+  var timerSimpleClass = '.<?php echo str_replace(" ", ".", TM_CountdownTimer_Block_Timer_Simple::getTimerBaseClass()) ?>';
+  var timerFlipClass = '.<?php echo str_replace(" ", ".", TM_CountdownTimer_Block_Timer_Flip::getTimerBaseClass()) ?>';
   var localeName = '<?php echo Mage::app()->getLocale()->getLocaleCode();?>';
   // translations for flipclock labels
   FlipClock.Lang[localeName] = {
@@ -35,21 +35,21 @@
   jQuery(timerFlipClass).each(
     function (index, htmlObj) {
       setAttributeSecondsLeft(htmlObj);
-      jQuery(this).FlipClock(
+      jQuery(htmlObj).FlipClock(
         htmlObj.getAttribute('data-seconds-left'),
         {
           clockFace: htmlObj.getAttribute('data-flipface'),
           countdown: true,
           language: localeName
         }
-      )
+      );
     }
-  );
+  ).removeClass('not-started');
   // start simple timer
   jQuery(timerSimpleClass).each(
     function (index, htmlObj) {
       setAttributeSecondsLeft(htmlObj);
       setDaysForSimpleTimer(htmlObj);
     }
-    ).startTimer();
+    ).startTimer().removeClass('not-started');
 </script>

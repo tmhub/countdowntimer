@@ -5,7 +5,7 @@ class TM_CountdownTimer_Block_Timer_Simple
         implements Mage_Widget_Block_Interface
 {
     const TIMER_SIMPLE_TEMPLATE = 'tm/countdowntimer/simpletimer.phtml';
-    const TIMER_BASE_CLASS_SIMPLE = 'tm-cdt-simple';
+    const TIMER_BASE_CLASS_SIMPLE = 'tm-cdt-simple not-started';
 
     protected function _construct() {
         if (!$this->hasData('template')) {
