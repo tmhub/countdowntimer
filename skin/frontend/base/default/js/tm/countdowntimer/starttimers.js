@@ -27,7 +27,7 @@ var tmCountdownTimers = new function() {
     }
   };
 
-  this.startTimers = function () {
+  this.start = function () {
     var self = this;
     // translations for flipclock labels
     if (jQuery.isEmptyObject(FlipClock.Lang[self.localeName])) {
@@ -63,11 +63,22 @@ var tmCountdownTimers = new function() {
     ).startTimer().removeClass(self.timerNotStartedClass);
   }
 
+  this.initEventsListening = function () {
+    // bind jQuery event
+    jQuery(document).on("tm:countdowntimer:start",
+      function (){tmCountdownTimers.start()}
+    );   
+    // listen prototype event
+    var eventsArr = ["quickshopping:previewloaded", "AjaxPro:onComplete:after"];
+    for (i=0; i<eventsArr.length; i++) {
+      document.observe(eventsArr[i], function (){tmCountdownTimers.start()});
+    }
+  }
+
 }
 
+// trigger timer start on document ready event
 jQuery(document).ready(function (){
-  tmCountdownTimers.startTimers();
-});
-jQuery(document).bind("TMCountdownTimer:startTimers", function (){
-  tmCountdownTimers.startTimers()
-});
+    tmCountdownTimers.start();
+    tmCountdownTimers.initEventsListening();
+  });
