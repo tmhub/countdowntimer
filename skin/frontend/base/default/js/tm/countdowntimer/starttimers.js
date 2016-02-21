@@ -64,12 +64,17 @@ var tmCountdownTimers = new function() {
   }
 
   this.initEventsListening = function () {
-    // bind jQuery event
+    // listen jQuery event
     jQuery(document).on("tm:countdowntimer:start", function (){
       tmCountdownTimers.start()
-    });   
+    });
     // listen prototype event
-    var eventsArr = ["quickshopping:previewloaded", "AjaxPro:onComplete:after"];
+    var eventsArr = [
+      "tm:countdowntimer:start",
+      "quickshopping:previewloaded",
+      "ajaxlayerednavigation:ready",
+      "AjaxPro:onComplete:after"
+    ];
     for (var i=0; i<eventsArr.length; i++) {
       document.observe(eventsArr[i], function (){tmCountdownTimers.start()});
     }
