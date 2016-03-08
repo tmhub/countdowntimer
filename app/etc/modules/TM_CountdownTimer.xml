@@ -3,7 +3,7 @@
     <modules>
         <TM_CountdownTimer>
             <active>true</active>
-            <codePool>local</codePool>
+            <codePool>community</codePool>
         </TM_CountdownTimer>
     </modules>
 </config>
