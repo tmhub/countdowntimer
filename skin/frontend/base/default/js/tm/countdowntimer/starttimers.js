@@ -1,5 +1,5 @@
-var tmCountdownTimers = new function(){
-
+function TmCountdownTimers(jQuery){
+  
   this.timerFlip = '.tm-cdt-flip';
   this.timerSimple = '.tm-cdt-simple';
   this.timerNotStarted ='.not-started';
@@ -65,8 +65,11 @@ var tmCountdownTimers = new function(){
 
 }
 
+// global variable
+var tmCountdownTimers;
 // trigger timer start on document ready event
-jQuery(document).ready(function(){
+document.observe("dom:loaded", function() {
+  tmCountdownTimers = new TmCountdownTimers(jQuery);
   tmCountdownTimers.start();
   // INITIALIZE EVENTS LISTEN
   // jquery event
