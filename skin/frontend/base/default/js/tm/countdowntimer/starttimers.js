@@ -7,16 +7,28 @@ var tmCountdownTimers = new function (){
   var _self = this;
 
   var _initTranslations = function (){
-    if (jQuery.isEmptyObject(FlipClock.Lang[_localeName])) {
-      FlipClock.Lang[_localeName] = {
-        'years' : Translator.translate('Years'),
-        'months' : Translator.translate('Months'),
-        'days' : Translator.translate('Days'),
-        'hours' : Translator.translate('Hours'),
-        'minutes' : Translator.translate('Minutes'),
-        'seconds' : Translator.translate('Seconds')
-      }
+    FlipClock.Lang[_localeName] = {
+      'years' : Translator.translate('Years'),
+      'months' : Translator.translate('Months'),
+      'days' : Translator.translate('Days'),
+      'hours' : Translator.translate('Hours'),
+      'minutes' : Translator.translate('Minutes'),
+      'seconds' : Translator.translate('Seconds')
     };
+  }
+
+  var _initFonts = function (){
+    WebFontConfig = {
+      google: { families: [ 'Fredoka+One::latin', 'Josefin+Sans::latin' ] }
+    };
+    (function() {
+      var wf = document.createElement('script');
+      wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+      wf.type = 'text/javascript';
+      wf.async = 'true';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(wf, s);
+    })();
   }
 
   var _getSecondsLeft = function(obj){
@@ -61,6 +73,7 @@ var tmCountdownTimers = new function (){
 
   this.start = function(){
     _initTranslations();
+    _initFonts();
     var timers = jQuery(_self.timerNotStarted);
     _startFlipClock(timers.filter(_self.timerFlip));
     _startSimpleTimer(timers.filter(_self.timerSimple));
@@ -71,7 +84,6 @@ var tmCountdownTimers = new function (){
 
 // trigger timer start on document ready event
 document.observe("dom:loaded", function() {
-  // tmCountdownTimers = new TmCountdownTimers();
   tmCountdownTimers.start();
   // INITIALIZE EVENTS LISTEN
   // jquery event

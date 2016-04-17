@@ -47,43 +47,8 @@
 /* light flipclock style */
 .flip-light ul { font-weight: bolder; }
 .flip-light ul li a div.up::after { background-color: transparent; }
-.flip-light .flip { box-shadow: none; border: 1px solid #666; }
-.flip-light ul li a div div.inn { background-color: #fff; color: #444; text-shadow: 0 1px 1px #000; text-shadow: none; }
+.flip-light ul li a div div.inn {  color: #444; background-color: #f4f4f4; text-shadow: none; }
 .flip-light .flip-clock-dot { display: none; }
-/* SHADOW */
-.flip-light  ul.play li.flip-clock-before .up .shadow {
-  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.0) 0%, rgba(0, 0, 0, 0.5) 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.0)), color-stop(100%, rgba(0, 0, 0, 0.5)));
-  background: linear, top, rgba(0, 0, 0, 0.0) 0%, rgba(0, 0, 0, 0.5) 100%;
-  background: -o-linear-gradient(top, rgba(0, 0, 0, 0.0) 0%, rgba(0, 0, 0, 0.5) 100%);
-  background: -ms-linear-gradient(top, rgba(0, 0, 0, 0.0) 0%, rgba(0, 0, 0, 0.5) 100%);
-  background: linear, to bottom, rgba(0, 0, 0, 0.0) 0%, rgba(0, 0, 0, 0.5) 100%;
-}
-.flip-light  ul.play li.flip-clock-active .up .shadow {
-  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.0) 0%, rgba(0, 0, 0, 0.5) 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.0)), color-stop(100%, rgba(0, 0, 0, 0.5)));
-  background: linear, top, rgba(0, 0, 0, 0.0) 0%, rgba(0, 0, 0, 0.5) 100%;
-  background: -o-linear-gradient(top, rgba(0, 0, 0, 0.0) 0%, rgba(0, 0, 0, 0.5) 100%);
-  background: -ms-linear-gradient(top, rgba(0, 0, 0, 0.0) 0%, rgba(0, 0, 0, 0.5) 100%);
-  background: linear, to bottom, rgba(0, 0, 0, 0.0) 0%, rgba(0, 0, 0, 0.5) 100%;
-}
-/*DOWN*/
-.flip-light  ul.play li.flip-clock-before .down .shadow {
-  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0) 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.5)), color-stop(100%, rgba(0, 0, 0, 0.0)));
-  background: linear, top, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0) 100%;
-  background: -o-linear-gradient(top, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0) 100%);
-  background: -ms-linear-gradient(top, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0) 100%);
-  background: linear, to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0) 100%;
-}
-.flip-light ul.play li.flip-clock-active .down .shadow {
-  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0) 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.5)), color-stop(100%, rgba(0, 0, 0, 0.0)));
-  background: linear, top, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0) 100%;
-  background: -o-linear-gradient(top, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0) 100%);
-  background: -ms-linear-gradient(top, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0) 100%);
-  background: linear, to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0) 100%;
-}
 .flip-no-labels.flip-clock-wrapper { margin-top: 0; }
 .flip-no-labels .flip-clock-label { display: none; }
 /*** SIMPLE TIMER STYLES ***/
@@ -94,3 +59,14 @@
 .simpletimer .minutes { display: inline-block; }
 .simpletimer .seconds { display: inline-block; }
 .simpletimer .clearDiv { clear: both; }
+.cmyk {
+  font-family: 'Fredoka One', sans-serif;
+  letter-spacing: .05em;
+  text-shadow: .07em -.07em rgba(255,0,255,0.75), -.07em -.07em rgba(0,255,255,0.75), 0 .1em rgba(255,255,0,0.75);
+}
+.thin-shadow {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: bolder;
+  letter-spacing: .05em;
+  text-shadow: .04em .04em 0 #fff, .07em .07em 0 rgba(54, 54, 54, 0.5);
+}

@@ -16,11 +16,15 @@ class TM_CountdownTimer_Block_Timer_Simple
 
     public function getClassname()
     {
-        $result = $this->_getData('classname');
-        if (!$result) {
-            $result = implode(' ', array(self::TIMER_BASE_CLASS_SIMPLE, 'simpletimer'));
-        }
-        return $result;
+        return implode(
+            ' ',
+            array(
+                self::TIMER_BASE_CLASS_SIMPLE,
+                'simpletimer',
+                $this->_getData('skin'),
+                $this->_getData('classname')
+            )
+        );
     }
 
     public static function getTimerBaseClass()

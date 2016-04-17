@@ -25,7 +25,7 @@
                 <source_model>tm_countdowntimer/sources_fliptimersize</source_model>
                 <visible>1</visible>
             </size>
-            <skin  translate="label">
+            <skin translate="label">
                 <label>Flip timer skin</label>
                 <type>select</type>
                 <source_model>tm_countdowntimer/sources_fliptimerskin</source_model>
@@ -58,9 +58,28 @@
                 <source_model>adminhtml/system_config_source_yesno</source_model>
                 <visible>1</visible>
             </display_days>
+            <skin translate="label">
+                <label>Timer style</label>
+                <type>select</type>
+                <values>
+                    <normal translate="label">
+                        <value>0</value>
+                        <label>Normal</label>
+                    </normal>
+                    <cmyk translate="label">
+                        <value>cmyk</value>
+                        <label>CMYK</label>
+                    </cmyk>
+                    <thinshadow translate="label">
+                        <value>thin-shadow</value>
+                        <label>Retro (thin shadow)</label>
+                    </thinshadow>
+                </values>
+                <visible>1</visible>
+            </skin>
             <inlinecss translate="label">
-                <label>Simple timer CSS</label>
-                <description>Default inline CSS for timer. Example: font-weight:bold; color:#6600CC;</description>
+                <label>Additional CSS</label>
+                <description>Default inline CSS for timer. Example: font-size:24px; color:#6600CC;</description>
                 <type>text</type>
                 <visible>1</visible>
             </inlinecss>
