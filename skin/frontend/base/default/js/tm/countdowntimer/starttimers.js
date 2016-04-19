@@ -7,13 +7,15 @@ var tmCountdownTimers = new function (){
   var _self = this;
 
   var _initTranslations = function (){
-    FlipClock.Lang[_localeName] = {
-      'years' : Translator.translate('Years'),
-      'months' : Translator.translate('Months'),
-      'days' : Translator.translate('Days'),
-      'hours' : Translator.translate('Hours'),
-      'minutes' : Translator.translate('Minutes'),
-      'seconds' : Translator.translate('Seconds')
+    if (!(_localeName in FlipClock.Lang)) {
+      FlipClock.Lang[_localeName] = {
+        'years' : Translator.translate('Years'),
+        'months' : Translator.translate('Months'),
+        'days' : Translator.translate('Days'),
+        'hours' : Translator.translate('Hours'),
+        'minutes' : Translator.translate('Minutes'),
+        'seconds' : Translator.translate('Seconds')
+      };
     };
   }
 
