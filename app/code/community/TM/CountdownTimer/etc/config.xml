@@ -8,15 +8,6 @@
     </modules>
 
     <frontend>
-        <routers>
-            <tm_countdowntimer>
-                <use>standard</use>
-                <args>
-                    <module>TM_CountdownTimer</module>
-                    <frontName>countdowntimer</frontName>
-                </args>
-            </tm_countdowntimer>
-        </routers>
         <layout>
             <updates>
                 <tm_countdowntimer module="TM_CountdownTimer">
