@@ -37,6 +37,11 @@
                 <source_model>adminhtml/system_config_source_yesno</source_model>
                 <visible>1</visible>
             </hide_labels>
+            <additional_class translate="label">
+                <label>Custom CSS class</label>
+                <type>text</type>
+                <visible>1</visible>
+            </additional_class>
         </parameters>
     </tm_countdowntimer_flip>
     <!-- Widget description for Simple Timer Widget -->

@@ -20,12 +20,20 @@ class TM_CountdownTimer_Block_Timer_Flip
         if (!$result) {
             $size = $this->_getData('size');
             $skin = $this->_getData('skin');
+            $addClass = $this->_getData('additional_class');
             if ($this->getHideLabels()) {
                 $labels = 'flip-no-labels';
             } else {
                 $labels = '';
             }
-            $result = implode(' ', array(self::TIMER_BASE_CLASS_FLIP, $size, $skin, $labels));
+            $result = implode(' ', array(
+                self::TIMER_BASE_CLASS_FLIP,
+                $size,
+                $skin,
+                $labels,
+                $addClass
+                )
+            );
         }
         return $result;
     }
