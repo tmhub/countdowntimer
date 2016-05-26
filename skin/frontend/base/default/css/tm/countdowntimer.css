@@ -1,5 +1,5 @@
 /*** FLIPTIMER TM STYLES ***/
-.flip-clock-wrapper { display: inline-block; width: auto; }
+.flip-clock-wrapper { display: inline-block; width: auto; direction: ltr; }
 .flip-clock-wrapper ul { float: none; display: inline-block; }
 .flip-clock-wrapper span { float: none; display: inline-block; }
 /* reset STD styles */
