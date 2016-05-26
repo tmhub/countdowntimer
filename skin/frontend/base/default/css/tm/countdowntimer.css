@@ -1,5 +1,5 @@
 /*** FLIPTIMER TM STYLES ***/
-.flip-clock-wrapper { display: inline-block; width: auto; direction: ltr; }
+.flip-clock-wrapper { display: inline-block; width: auto; direction: ltr; white-space: nowrap; }
 .flip-clock-wrapper ul { float: none; display: inline-block; }
 .flip-clock-wrapper span { float: none; display: inline-block; }
 /* reset STD styles */
@@ -52,7 +52,7 @@
 .flip-no-labels.flip-clock-wrapper { margin-top: 0; }
 .flip-no-labels .flip-clock-label { display: none; }
 /*** SIMPLE TIMER STYLES ***/
-.simpletimer { display: inline-block; }
+.simpletimer { display: inline-block; white-space: nowrap; }
 .simpletimer .days { display: inline-block; }
 .simpletimer .days:after { content: "\00a0"; }
 .simpletimer .hours { display: inline-block; }
