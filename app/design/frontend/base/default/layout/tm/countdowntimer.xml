@@ -2,15 +2,10 @@
 <layout>
     <default>
         <reference name="head">
-            <!-- Add jQuery 1.11.1 if selected Enable jQ for CountDown Timer-->
-            <action method="addJs" ifconfig="tm_countdowntimer/general/add_jquery">
-                <script>tm/jquery/jquery-1.11.1.min.js</script>
-                <params><![CDATA[data-group="tm-cdt-lib-jquery"]]></params>
-            </action>
             <!-- Load FlipClock -->
             <action method="addJs">
                 <script>tm/flipclock/flipclock.js</script>
-                <params><![CDATA[data-group="tm-cdt-req-jquery"]]></params>
+                <params>defer</params>
             </action>
             <action method="addItem">
                 <type>js_css</type>
@@ -19,7 +14,7 @@
             <!-- Load SimpleTimer js-lib-->
             <action method="addJs">
                 <script>tm/simpletimer/simpletimer.js</script>
-                <params><![CDATA[data-group="tm-cdt-req-jquery"]]></params>
+                <params>defer</params>
             </action>
             <!-- Extesion styles and scripts -->
             <action method="addItem">
@@ -29,6 +24,7 @@
             <action method="addItem">
                 <type>skin_js</type>
                 <name>js/tm/countdowntimer/starttimers.js</name>
+                <params>defer</params>
             </action>
         </reference>
     </default>

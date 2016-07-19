@@ -88,7 +88,7 @@ var tmCountdownTimers = new function (){
 document.observe("dom:loaded", function() {
   tmCountdownTimers.start();
   // INITIALIZE EVENTS LISTEN
-  // jquery event
+  // jQuery event
   jQuery(document).on("tm:countdowntimer:start", function(){tmCountdownTimers.start()});
   // prototype event
   var eventsArr = [
