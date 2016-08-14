@@ -7,6 +7,14 @@
         </TM_CountdownTimer>
     </modules>
 
+    <default>
+        <tmcore>
+            <jslibs>
+                <jquery>1</jquery>
+            </jslibs>
+        </tmcore>
+    </default>
+
     <frontend>
         <layout>
             <updates>
@@ -25,13 +33,7 @@
             </modules>
         </translate>
     </frontend>
-    <default>
-        <tm_countdowntimer>
-            <general>
-                <add_jquery>0</add_jquery>
-            </general>
-        </tm_countdowntimer>
-    </default>
+
     <global>
         <blocks>
             <tm_countdowntimer>
@@ -49,4 +51,5 @@
             </tm_countdowntimer>
         </helpers>
     </global>
+
 </config>
