@@ -27,6 +27,27 @@
                 <name>js/tm/countdowntimer/starttimers.js</name>
                 <params>defer</params>
             </action>
+            <!-- remove resource load if module output disabled -->
+            <action method="removeItem" ifconfig="advanced/modules_disable_output/TM_CountdownTimer">
+                <type>js</type>
+                <name>tm/lib/flipclock/flipclock.js</name>
+            </action>
+            <action method="removeItem" ifconfig="advanced/modules_disable_output/TM_CountdownTimer">
+                <type>js_css</type>
+                <name>tm/lib/flipclock/flipclock.css</name>
+            </action>
+            <action method="removeItem" ifconfig="advanced/modules_disable_output/TM_CountdownTimer">
+                <type>js</type>
+                <name>tm/lib/simpletimer/simpletimer.js</name>
+            </action>
+            <action method="removeItem" ifconfig="advanced/modules_disable_output/TM_CountdownTimer">
+                <type>skin_css</type>
+                <name>css/tm/countdowntimer.css</name>
+            </action>
+            <action method="removeItem" ifconfig="advanced/modules_disable_output/TM_CountdownTimer">
+                <type>skin_js</type>
+                <name>js/tm/countdowntimer/starttimers.js</name>
+            </action>
         </reference>
     </default>
 </layout>
