@@ -10,6 +10,7 @@
             <action method="addItem">
                 <type>js_css</type>
                 <name>tm/lib/flipclock/flipclock.css</name>
+                <params>media="all"</params>
             </action>
             <!-- Load SimpleTimer js-lib-->
             <action method="addJs">
