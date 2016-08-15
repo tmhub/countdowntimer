@@ -4,16 +4,16 @@
         <reference name="head">
             <!-- Load FlipClock -->
             <action method="addJs">
-                <script>tm/flipclock/flipclock.js</script>
+                <script>tm/lib/flipclock/flipclock.js</script>
                 <params>defer</params>
             </action>
             <action method="addItem">
                 <type>js_css</type>
-                <name>tm/flipclock/flipclock.css</name>
+                <name>tm/lib/flipclock/flipclock.css</name>
             </action>
             <!-- Load SimpleTimer js-lib-->
             <action method="addJs">
-                <script>tm/simpletimer/simpletimer.js</script>
+                <script>tm/lib/simpletimer/simpletimer.js</script>
                 <params>defer</params>
             </action>
             <!-- Extesion styles and scripts -->

@@ -12,7 +12,7 @@ app/locale/fr_FR/TM_CountdownTimer.csv                          app/locale/fr_FR
 app/locale/it_IT/TM_CountdownTimer.csv                          app/locale/it_IT/TM_CountdownTimer.csv
 app/locale/nl_NL/TM_CountdownTimer.csv                          app/locale/nl_NL/TM_CountdownTimer.csv
 app/locale/ro_RO/TM_CountdownTimer.csv                          app/locale/ro_RO/TM_CountdownTimer.csv
-js/tm/flipclock/                                                js/tm/flipclock/
-js/tm/simpletimer/                                              js/tm/simpletimer/
+js/tm/lib/flipclock/                                            js/tm/lib/flipclock/
+js/tm/lib/simpletimer/                                          js/tm/lib/simpletimer/
 skin/frontend/base/default/css/tm/countdowntimer.css			skin/frontend/base/default/css/tm/countdowntimer.css
 skin/frontend/base/default/js/tm/countdowntimer/				skin/frontend/base/default/js/tm/countdowntimer/
