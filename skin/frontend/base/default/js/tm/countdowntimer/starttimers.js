@@ -107,13 +107,10 @@ document.observe("dom:loaded", function() {
     // jQuery event
     jQuery(document).on("tm:countdowntimer:start", tmCountdownTimers.start);
     // prototype event
-    var eventsArr = [
-        "tm:countdowntimer:start",
-        "quickshopping:previewloaded",
-        "ajaxlayerednavigation:ready",
-        "AjaxPro:onComplete:after"
-    ];
-    eventsArr.map(function(eventName){
-        document.observe(eventName, tmCountdownTimers.start);
-    });
+    ["tm:countdowntimer:start", "quickshopping:previewloaded",
+     "ajaxlayerednavigation:ready", "AjaxPro:onSuccess:after"].map(
+        function(eventName){
+            document.observe(eventName, tmCountdownTimers.start);
+        }
+    );
 });
