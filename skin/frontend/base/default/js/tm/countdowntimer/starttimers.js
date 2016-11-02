@@ -108,7 +108,8 @@ document.observe("dom:loaded", function() {
     jQuery(document).on("tm:countdowntimer:start", tmCountdownTimers.start);
     // prototype event
     ["tm:countdowntimer:start", "quickshopping:previewloaded",
-     "ajaxlayerednavigation:ready", "AjaxPro:onSuccess:after"].map(
+     "ajaxlayerednavigation:ready", "AjaxPro:onSuccess:after",
+     "AjaxPro:onComplete:after"].map(
         function(eventName){
             document.observe(eventName, tmCountdownTimers.start);
         }
