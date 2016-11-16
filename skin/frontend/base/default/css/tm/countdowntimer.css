@@ -1,5 +1,5 @@
 /*** FLIPTIMER TM STYLES ***/
-.flip-clock-wrapper { display: inline-block; width: auto; direction: ltr; white-space: nowrap; }
+.flip-clock-wrapper { display: inline-block; width: auto; direction: ltr; white-space: nowrap; margin: 0; }
 .flip-clock-wrapper ul { float: none; display: inline-block; }
 .flip-clock-wrapper span { float: none; display: inline-block; }
 /* reset STD styles */
@@ -21,7 +21,8 @@
 .flip-small .flip-clock-dot.top { top: 9px; }
 .flip-small .flip-clock-dot.bottom { bottom: 6px; }
 .flip-small .flip-clock-dot { left: 1px; height: 4px; width: 4px; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.7); }
-.flip-small.flip-clock-wrapper { margin: 0; margin-top: 11px; font-size: 10px; }
+.flip-small.flip-clock-wrapper { margin-top: 11px; }
+.flip-small .flip-clock-label { font-size: 10px; }
 /* medium flipclock style */
 .flip-medium ul { border-radius: 4px; font-weight: normal !important; height: 56px; margin: 2px !important;
   width: 38px; padding-left: 0px !important; }
@@ -39,7 +40,8 @@
 .flip-medium .flip-clock-dot.top { top: 15px; }
 .flip-medium .flip-clock-dot.bottom { bottom: 12px; }
 .flip-medium .flip-clock-dot { left: 2px; height: 8px; width: 8px; box-shadow: 0 2px 3px rgba(0, 0, 0, 0.7); }
-.flip-medium.flip-clock-wrapper { margin: 0; margin-top: 14px; font-size: 12px; }
+.flip-medium.flip-clock-wrapper { margin-top: 14px; }
+.flip-medium .flip-clock-label { font-size: 12px; }
 /* large flipclock style */
 .flip-large ul { margin: 5px !important; }
 .flip-large ul li { line-height: 87px !important; }
