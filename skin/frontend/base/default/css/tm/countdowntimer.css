@@ -1,5 +1,5 @@
 /*** FLIPTIMER TM STYLES ***/
-.flip-clock-wrapper { display: inline-block; width: auto; direction: ltr; white-space: nowrap; margin: 0; }
+.flip-clock-wrapper { display: inline-block; width: auto; direction: ltr; white-space: nowrap; overflow: visible; margin: 0; }
 .flip-clock-wrapper ul { float: none; display: inline-block; }
 .flip-clock-wrapper span { float: none; display: inline-block; }
 /* reset STD styles */
@@ -61,12 +61,12 @@
 .simpletimer .minutes { display: inline-block; }
 .simpletimer .seconds { display: inline-block; }
 .simpletimer .clearDiv { clear: both; }
-.cmyk {
+.simpletimer.cmyk {
   font-family: 'Fredoka One', sans-serif;
   letter-spacing: .05em;
   text-shadow: .07em -.07em rgba(255,0,255,0.75), -.07em -.07em rgba(0,255,255,0.75), 0 .1em rgba(255,255,0,0.75);
 }
-.thin-shadow {
+.simpletimer.thin-shadow {
   font-family: 'Josefin Sans', sans-serif;
   font-weight: bolder;
   letter-spacing: .05em;
