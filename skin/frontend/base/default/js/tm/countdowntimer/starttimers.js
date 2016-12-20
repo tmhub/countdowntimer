@@ -1,6 +1,39 @@
 ;(function($){
 
-    if (!$) { return; }
+    if (typeof $ === "undefined") { return; }
+
+    var _webFontsInitialized = false,
+        _timerFlip = '.tm-cdt-flip',
+        _timerSimple = '.tm-cdt-simple',
+        _timerNotStarted ='.not-started',
+        _localeName = 'cu_LO',
+        _texts = {
+            'years' : 'Years',
+            'months' : 'Months',
+            'days' : 'Days',
+            'hours' : 'Hours',
+            'minutes' : 'Minutes',
+            'seconds' : 'Seconds'
+        };
+
+    function _initializeWebFonts() {
+        if (_webFontsInitialized) {
+            return;
+        }
+        // initialize additional fonts
+        WebFontConfig = {
+            google: { families: [ 'Fredoka+One::latin', 'Josefin+Sans::latin' ] }
+        };
+        (function() {
+            var wf = document.createElement('script');
+            wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+            wf.type = 'text/javascript';
+            wf.async = 'true';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(wf, s);
+        })();
+        _webFontsInitialized = true;
+    };
 
     function _getSecondsLeft(obj){
         var end = $(obj).data('endDatetimeUtc');
@@ -38,22 +71,13 @@
                 }
             };
             $(el).data('secondsLeft', secLeft);
+            if ($(el).is('.cmyk, .thin-shadow')) {
+                _initializeWebFonts();
+            }
         });
         timers.startTimer();
     }
 
-    var _timerFlip = '.tm-cdt-flip',
-        _timerSimple = '.tm-cdt-simple',
-        _timerNotStarted ='.not-started',
-        _localeName = 'cu_LO',
-        _texts = {
-            'years' : 'Years',
-            'months' : 'Months',
-            'days' : 'Days',
-            'hours' : 'Hours',
-            'minutes' : 'Minutes',
-            'seconds' : 'Seconds'
-        };
 
     var CountdownTimers = function(){};
 
@@ -68,18 +92,6 @@
                 }
                 FlipClock.Lang[_localeName] = transl;
             };
-            // initialize additional fonts
-            WebFontConfig = {
-                google: { families: [ 'Fredoka+One::latin', 'Josefin+Sans::latin' ] }
-            };
-            (function() {
-                var wf = document.createElement('script');
-                wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-                wf.type = 'text/javascript';
-                wf.async = 'true';
-                var s = document.getElementsByTagName('script')[0];
-                s.parentNode.insertBefore(wf, s);
-            })();
         },
 
         start: function(){
@@ -93,7 +105,7 @@
 
     window.tmCountdownTimers = new CountdownTimers();
 
-})((typeof jQuery != 'undefined')?jQuery:false);
+})(jQuery);
 
 // trigger timer start on document ready event
 document.observe("dom:loaded", function() {
