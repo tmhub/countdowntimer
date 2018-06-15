@@ -126,4 +126,12 @@ document.observe("dom:loaded", function() {
             document.observe(eventName, tmCountdownTimers.start);
         }
     );
+    // integration with Sm_Shopby module
+    if (typeof ajaxListener === 'function') {
+        ajaxListener = ajaxListener.wrap(function(originalCall){
+            originalCall();
+            tmCountdownTimers.initialize();
+            tmCountdownTimers.start();
+        });
+    }
 });
