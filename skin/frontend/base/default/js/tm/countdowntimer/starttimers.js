@@ -130,8 +130,7 @@ document.observe("dom:loaded", function() {
     if (typeof ajaxListener === 'function') {
         ajaxListener = ajaxListener.wrap(function(originalCall){
             originalCall();
-            tmCountdownTimers.initialize();
-            tmCountdownTimers.start();
+            jQuery(document).trigger("tm:countdowntimer:start");
         });
     }
 });
